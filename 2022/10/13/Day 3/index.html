@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>linux | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Day 3——Linux[Linux基础知识]Linux文件目录属性   标识符 意义    d 目录   - 无任何权限   L 连接   B 储存设备   C 串行设备   S 特殊权限socket文件   R 读   W 写    Linux包管理 软件安装 安装rpm包 rpm -ivh xxxxx.rpm   通过软件源安装二进制程序 apt-get yum   自己编译源代码 conf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://example.com/2022/10/13/Day%203/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Day 3——Linux[Linux基础知识]Linux文件目录属性   标识符 意义    d 目录   - 无任何权限   L 连接   B 储存设备   C 串行设备   S 特殊权限socket文件   R 读   W 写    Linux包管理 软件安装 安装rpm包 rpm -ivh xxxxx.rpm   通过软件源安装二进制程序 apt-get yum   自己编译源代码 conf">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706092815948.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706092754917.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706093906051.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706094331405.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706095142909.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706100341144.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706100727871.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706140530238.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706140456693.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706142152707.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706141310252.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706141457705.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706150308353.png">
+<meta property="og:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706150218413.png">
+<meta property="article:published_time" content="2022-10-13T05:28:09.857Z">
+<meta property="article:modified_time" content="2022-10-13T05:28:54.672Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706092815948.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Day 3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/13/Day%203/" class="article-date">
+  <time class="dt-published" datetime="2022-10-13T05:28:09.857Z" itemprop="datePublished">2022-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Day-3——Linux"><a href="#Day-3——Linux" class="headerlink" title="Day 3——Linux"></a>Day 3——<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-tutorial.html">Linux</a></h1><h2 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="[Linux基础知识]"></a>[Linux基础知识]</h2><h3 id="Linux文件目录属性"><a href="#Linux文件目录属性" class="headerlink" title="Linux文件目录属性"></a>Linux文件目录属性</h3><table>
+<thead>
+<tr>
+<th>标识符</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d</td>
+<td>目录</td>
+</tr>
+<tr>
+<td>-</td>
+<td>无任何权限</td>
+</tr>
+<tr>
+<td>L</td>
+<td>连接</td>
+</tr>
+<tr>
+<td>B</td>
+<td>储存设备</td>
+</tr>
+<tr>
+<td>C</td>
+<td>串行设备</td>
+</tr>
+<tr>
+<td>S</td>
+<td>特殊权限socket文件</td>
+</tr>
+<tr>
+<td>R</td>
+<td>读</td>
+</tr>
+<tr>
+<td>W</td>
+<td>写</td>
+</tr>
+</tbody></table>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706092815948.png" alt="image-20220706092815948"></p>
+<h3 id="Linux包管理"><a href="#Linux包管理" class="headerlink" title="Linux包管理"></a>Linux包管理</h3><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706092754917.png" alt="image-20220706092754917"></p>
+<h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4><ul>
+<li>安装rpm包<ul>
+<li>rpm -ivh xxxxx.rpm</li>
+</ul>
+</li>
+<li>通过软件源安装二进制程序<ul>
+<li>apt-get yum</li>
+</ul>
+</li>
+<li>自己编译源代码<ul>
+<li>configure make make install</li>
+<li>Cmake</li>
+</ul>
+</li>
+</ul>
+<h4 id="CentOS-软件安装"><a href="#CentOS-软件安装" class="headerlink" title="CentOS 软件安装"></a>CentOS 软件安装</h4><ol>
+<li><p>配置更新源，编辑 <code>/etc/yum.repo.d/CentOS-Base.repo</code></p>
+</li>
+<li><p>修改镜像源为阿里镜像源：<code>http://mirrors.aliyun.com/</code></p>
+</li>
+<li><p>更新本地数据库：<code>yum update</code></p>
+</li>
+<li><p>安装软件：<code>yum install 软件名</code> </p>
+<p>搜索软件：<code>yum search 软件名或一部分</code></p>
+<p>卸载软件：<code>yum remove 软件名</code></p>
+<p>升级：<code>yum upgrade</code></p>
+</li>
+</ol>
+<h3 id="Linux用户管理"><a href="#Linux用户管理" class="headerlink" title="Linux用户管理"></a>Linux用户管理</h3><ul>
+<li>分为用户组和用户</li>
+<li>root为超级管理员</li>
+<li>管理员组需要最高管理员权限需要“提权”：使用<code>sudo</code>命令</li>
+</ul>
+<h3 id="Linux的终端"><a href="#Linux的终端" class="headerlink" title="Linux的终端"></a>Linux的终端</h3><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706093906051.png" alt="image-20220706093906051"></p>
+<h3 id="Linux远程管理"><a href="#Linux远程管理" class="headerlink" title="Linux远程管理"></a>Linux远程管理</h3><ul>
+<li><p>Shell：telnet、ssh</p>
+</li>
+<li><p>图形界面：VNC</p>
+</li>
+<li><p>telnet都是以明文传输，有泄漏风险</p>
+</li>
+<li><p>ssh经过加密</p>
+</li>
+</ul>
+<hr>
+<h2 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h2><h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706094331405.png" alt="image-20220706094331405"></p>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><ul>
+<li>ifconifg</li>
+<li>ping(mtr)</li>
+<li>nslookup</li>
+<li>traceroute</li>
+<li>telnet</li>
+<li>netstat</li>
+<li>curl &amp; wget</li>
+</ul>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><ul>
+<li><p>cd</p>
+</li>
+<li><p>ls</p>
+</li>
+<li><p>dir</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-grep.html">grep</a> 用于查找内容包含指定的范本样式的文件</p>
+</li>
+<li><p>find</p>
+</li>
+<li><p>cp 复制</p>
+</li>
+<li><p>rm</p>
+</li>
+<li><p>mv</p>
+</li>
+<li><p>mkdir</p>
+</li>
+</ul>
+<h3 id="控制台文本编辑"><a href="#控制台文本编辑" class="headerlink" title="控制台文本编辑"></a>控制台文本编辑</h3><ul>
+<li>所见即所得的 vim<ul>
+<li>通过一系列键盘指令更改</li>
+</ul>
+</li>
+<li>所见非所得 sed<ul>
+<li>通过命令行参数编辑文本（一般用于批量操作）</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706095142909.png" alt="image-20220706095142909"></p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-ps.html">ps</a> （D&#x2F;R&#x2F;S&#x2F;T&#x2F;Z）显示正在进行的进程<ul>
+<li>D: 无法中断的休眠状态 (通常 IO 的进程)</li>
+<li>R: 正在执行中</li>
+<li>S: 静止状态</li>
+<li>T: 暂停执行</li>
+<li>Z: 不存在但暂时无法消除</li>
+</ul>
+</li>
+<li>kill</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-top.html">top</a></li>
+</ul>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ul>
+<li><p>管理用户:</p>
+<ul>
+<li>useradd</li>
+<li>Passwd</li>
+<li>Usermod</li>
+<li>Userdel</li>
+</ul>
+</li>
+<li><p>管理组: </p>
+<ul>
+<li>Groupadd</li>
+<li>Groupmod</li>
+<li>Groupdel</li>
+</ul>
+</li>
+</ul>
+<h3 id="磁盘储存"><a href="#磁盘储存" class="headerlink" title="磁盘储存"></a>磁盘储存</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-mount.html">mount</a> 它用于挂载Linux系统外的文件</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-fdisk.html">fdisk</a>  一个创建和维护分区表的程序，它兼容 DOS 类型的分区表、BSD 或者 SUN 类型的磁盘列表。</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-df.html">df</a>  显示目前在 Linux 系统上的文件系统磁盘使用情况统计。</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-mkfs.html">mkfs</a> 用于在特定的分区上建立 linux 文件系统。</li>
+</ul>
+<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706100341144.png" alt="image-20220706100341144"></p>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706100727871.png" alt="image-20220706100727871"></p>
+<h3 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h3><ul>
+<li>tar 压缩打包</li>
+<li>man 帮助</li>
+</ul>
+<hr>
+<h2 id="Linux防火墙"><a href="#Linux防火墙" class="headerlink" title="Linux防火墙"></a>Linux防火墙</h2><h3 id="Netfilter-x2F-IPTables概述"><a href="#Netfilter-x2F-IPTables概述" class="headerlink" title="Netfilter&#x2F;IPTables概述"></a>Netfilter&#x2F;IPTables概述</h3><h4 id="Netfilter在内核中的位置"><a href="#Netfilter在内核中的位置" class="headerlink" title="Netfilter在内核中的位置"></a>Netfilter在内核中的位置</h4><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706140530238.png" alt="image-20220706140530238"></p>
+<h4 id="Netfilter结构"><a href="#Netfilter结构" class="headerlink" title="Netfilter结构"></a>Netfilter结构</h4><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706140456693.png" alt="image-20220706140456693"></p>
+<p><strong>链</strong></p>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706142152707.png" alt="image-20220706142152707"></p>
+<h4 id="IPTables"><a href="#IPTables" class="headerlink" title="IPTables"></a>IPTables</h4><p><strong>在用户层通过IPTables对Netfilter进行控制管理</strong></p>
+<ul>
+<li>Netfilter可以对数据进行允许、丢弃、修改、拒绝等操作</li>
+<li>Netfilter通过以下对数据包进行分类：<ul>
+<li>源IP地址</li>
+<li>目标IP地址</li>
+<li>接口</li>
+<li>协议（TCP、UDP、ICMP）</li>
+<li>端口号</li>
+<li>连接状态（new、ESTABLISHED、RELATED、INVALID）</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706141310252.png" alt="image-20220706141310252"></p>
+<h4 id="IPTables规则"><a href="#IPTables规则" class="headerlink" title="IPTables规则"></a>IPTables规则</h4><ul>
+<li>IPTables通过规则对数据进行访问控制</li>
+<li>一个规则使用一行配置</li>
+<li>规则按顺序排列</li>
+<li>当收到、发出、转发数据包时，使用规则按顺序进行逐条匹配、修改</li>
+<li>没有匹配规则，使用默认动作</li>
+</ul>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706141457705.png" alt="image-20220706141457705"></p>
+<hr>
+<h3 id="IPTables基本操作"><a href="#IPTables基本操作" class="headerlink" title="IPTables基本操作"></a>IPTables基本操作</h3><ul>
+<li><p>列出现有iptables规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -L</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入一个规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT 2 -p tcp --dport 22 -j ACCEPT</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除一个规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -D INPUT 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除所有规则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="iptables匹配参数"><a href="#iptables匹配参数" class="headerlink" title="iptables匹配参数"></a>iptables匹配参数</h4><ul>
+<li><p>基于ip地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-s 192.168.1.100</span><br><span class="line">-d 10.0.0.0/8</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基于接口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-i eth0</span><br><span class="line">-o eth1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取反</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s &#x27;!&#x27; 192.168.1.0/24</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基于协议与端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-p tcp --dport 23</span><br><span class="line">-p udp –-sport 53</span><br><span class="line">-p icmp</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="iptables-INPUT、OUTPUT"><a href="#iptables-INPUT、OUTPUT" class="headerlink" title="iptables-INPUT、OUTPUT"></a>iptables-INPUT、OUTPUT</h4><ul>
+<li><p>控制本机流量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables –A INPUT –s 192.168.1.100 –j DROP</span><br><span class="line">iptables –A INPUT –p tcp --dport 80 –j DROP </span><br><span class="line">iptables –A INPUT –s 192.168.1.0/24 –p tcp --dport 22 –j DROP</span><br><span class="line">iptables –A INPUT –i eth0 –j ACCEPT</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="iptables-FORWARD"><a href="#iptables-FORWARD" class="headerlink" title="iptables-FORWARD"></a>iptables-FORWARD</h4><ul>
+<li><p>禁止所有192.168.1.0&#x2F;24到10.1.1.0&#x2F;24的流量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables –A FORWARD –s 192.168.1.0/24 –d 10.1.1.0/24 –j DROP</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="iptables-NAT"><a href="#iptables-NAT" class="headerlink" title="iptables-NAT"></a>iptables-NAT</h4><ul>
+<li><p>NAT分为两种，源地址转换（SNAT）和目的地址转换（DNAT）</p>
+</li>
+<li><p>通过NAT进行跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables –t nat –A PREROUTING –p tcp --dport 80 –j DNAT –to-dist 192.168.1.100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过NAT对出向数据进行跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables –t nat –A OUTPUT –p tcp --dport 80 –j DNAT –to-dist 192.168.1.100:8080</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过Nat对数据进行伪装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iptables –t nat –A POSTROUTING –o eth1 –j MASQUERADE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过NAT隐藏源ip地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iptables –t nat –A POSTROUTING –j SNAT --to-source 1.2.3.4</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="配置iptables"><a href="#配置iptables" class="headerlink" title="配置iptables"></a>配置iptables</h4><ol>
+<li><p>在线配置，立即生效，但需要保存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Iptables –help</span><br><span class="line">Man iptables</span><br><span class="line">Service iptables save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件，永久生效，但需要重启iptables</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修改 /etc/sysconfig/iptables</span><br><span class="line">修改 /etc/sysconfig/ip6tables</span><br><span class="line">Service iptables restart</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="iptables缺点"><a href="#iptables缺点" class="headerlink" title="iptables缺点"></a>iptables缺点</h4><ol>
+<li>防火墙虽然可以过滤互联网的数据包，但却无法过滤内部网络的数据包。因此若有人从内部网络攻击时，防火墙没有作用。</li>
+<li>电脑本身的操作系统亦可能因一些系统漏洞，使入侵者可以利用这些漏洞绕过防火墙过滤，从而入侵电脑。</li>
+<li>防火墙无法有效阻挡病毒攻击，尤其是隐藏在数据中的病毒。</li>
+</ol>
+<hr>
+<h3 id="FIREWALLD"><a href="#FIREWALLD" class="headerlink" title="FIREWALLD"></a>FIREWALLD</h3><h4 id="firewalld与iptables对比"><a href="#firewalld与iptables对比" class="headerlink" title="firewalld与iptables对比"></a>firewalld与iptables对比</h4><p>在centos7之后，默认使用firewalld来管理netfilter子系统。</p>
+<ul>
+<li><p>firewalld可以动态修改单条规则，而不需要像iptables那样，在修改了规则后必须得全部刷新才可以生效；</p>
+</li>
+<li><p>firewalld在使用上要比iptables人性化很多，即使不明白“三张表五条链”而且对TCP&#x2F;IP协议也不理解也可以实现大部分功能。</p>
+</li>
+<li><p>可以依据不同的工作场景来调用不同的firewalld区域，实现对大量防火墙策略的快速切换。</p>
+</li>
+<li><p>firewalld默认拒绝，iptables默认允许。</p>
+</li>
+</ul>
+<h4 id="区域管理"><a href="#区域管理" class="headerlink" title="区域管理"></a>区域管理</h4><ul>
+<li><p>通过将网络划分成不同的区域，制定出不同区域之间的访问控制策略来控制不同程序区域间传送的数据流。</p>
+</li>
+<li><p>描述了主机所连接的整个网络环境的可信级别，并定义了新连接的处理方式。</p>
+</li>
+<li><p>firewalld默认提供了九个zone配置文件：block.xml、dmz.xml、drop.xml、external.xml、 home.xml、internal.xml、public.xml、trusted.xml、work.xml，他们都保存在“&#x2F;usr&#x2F;lib &#x2F;firewalld&#x2F;zones&#x2F;”目录下。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th align="left">连接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>阻塞区域（block）</td>
+<td align="left">任何传入的网络数据包都将被阻止</td>
+</tr>
+<tr>
+<td>工作区域（work）</td>
+<td align="left">相信网络上的其他计算机，不会损害你的计算机</td>
+</tr>
+<tr>
+<td>家庭区域（home）</td>
+<td align="left">相信网络上的其他计算机，不会损害你的计算机</td>
+</tr>
+<tr>
+<td>公共区域（public）</td>
+<td align="left">不相信网络上的任何计算机，只有选择接受传入的网络连接</td>
+</tr>
+<tr>
+<td>隔离区域（dmz）</td>
+<td align="left">隔离区域也称为非军事区域，内外网络之间增加的一层网络，起到缓冲作用。对于隔离区域，只有选择接受传入的网络连接</td>
+</tr>
+<tr>
+<td>信任区域（trusted）</td>
+<td align="left">所有的网络连接都可以接受</td>
+</tr>
+<tr>
+<td>丢弃区域（drop）</td>
+<td align="left">任何传入的网络连接都被拒绝</td>
+</tr>
+<tr>
+<td>内部区域（internal）</td>
+<td align="left">信任网络上的其他计算机，不会损害你的计算机。只有选择接受传入的网络连接</td>
+</tr>
+<tr>
+<td>外部区域（external）</td>
+<td align="left">不相信网络上的其他计算机，不会损害你的计算机。只有选择接受传入的网络连接</td>
+</tr>
+</tbody></table>
+<h4 id="firewalld配置方式"><a href="#firewalld配置方式" class="headerlink" title="firewalld配置方式"></a>firewalld配置方式</h4><ul>
+<li>firewall-config</li>
+<li>firewall-cmd</li>
+<li>直接编辑xml文件</li>
+</ul>
+<hr>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><ul>
+<li><code>firewall-cmd --help</code></li>
+<li><code>firewall-cmd --version</code></li>
+<li><code>firewall-cmd --state</code></li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ul>
+<li><p>接口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --get-active-zone</span><br><span class="line"># firewall-cmd --zone=public --add-interface=eth0</span><br><span class="line"># firewall-cmd --get-zone-of-interface=eht0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --zone=dmz --list-ports</span><br><span class="line"># firewall-cmd --zone=dmz --add-port=8080/tcp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --zone=work --add-service</span><br><span class="line"># firewall-cmd --zone=work --remove-service=smtp</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Linux的存储原则——LVM"><a href="#Linux的存储原则——LVM" class="headerlink" title="Linux的存储原则——LVM"></a>Linux的存储原则——LVM</h2><h3 id="硬盘的映射与挂载"><a href="#硬盘的映射与挂载" class="headerlink" title="硬盘的映射与挂载"></a>硬盘的映射与挂载</h3><ul>
+<li><p>磁盘映射的设备文件：</p>
+<ul>
+<li>&#x2F;dev&#x2F;sda   &#x2F;dev&#x2F;sda1 …</li>
+<li>&#x2F;dev&#x2F;sdb …</li>
+</ul>
+</li>
+<li><p>磁盘的挂载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount -t ext3 /dev/sda1 /media/mydisk1</span><br><span class="line">         格式     磁盘     挂载的文件夹</span><br><span class="line">mount -t ntfs /dev/sda2 /media/mydisk2</span><br><span class="line">解挂载：</span><br><span class="line">umount /media/mydisk1 .....</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>光盘的挂载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount -o loop /dev/cdrom /media/mycd</span><br><span class="line"></span><br><span class="line">mount -o loop /tmp/image.iso /mnt/cdrom</span><br><span class="line">将 /tmp/image.iso 这个光碟的 image 档使用 loop 模式挂在 /mnt/cdrom之下。用这种方法可以将一般网络上可以找到的 Linux 光碟 ISO 档在不烧录成光碟的情况下检视其内容。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="磁盘分区查看"><a href="#磁盘分区查看" class="headerlink" title="磁盘分区查看"></a>磁盘分区查看</h4><ul>
+<li>列出分区<ul>
+<li><code>fdisk -l</code></li>
+<li><code>df -h</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="磁盘分区的格式化"><a href="#磁盘分区的格式化" class="headerlink" title="磁盘分区的格式化"></a>磁盘分区的格式化</h4><ul>
+<li><p><code>mkfs -t 文件系统 /dev/设备</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs -t ext4 /dev/sda1</span><br><span class="line">mkfs -t ext2 /dev/sda2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>parted 针对2T以上硬盘的</p>
+</li>
+<li><p>gparted 软件实现磁盘管理</p>
+</li>
+</ul>
+<hr>
+<h4 id="服务器储存管理——逻辑卷组管理器LVM"><a href="#服务器储存管理——逻辑卷组管理器LVM" class="headerlink" title="服务器储存管理——逻辑卷组管理器LVM"></a>服务器储存管理——逻辑卷组管理器LVM</h4><ul>
+<li><p>LVM类似于Windows的动态磁盘。可以“屏蔽”物理磁盘的差异，创建逻辑磁盘和分区。</p>
+</li>
+<li><p>一个逻辑磁盘很可能是1块或多块磁盘组成的；1个逻辑分区也有可能在不同的物理磁盘上。</p>
+</li>
+<li><p>优势：扩展性强</p>
+</li>
+<li><p>缺点：跨越多块物理磁盘的逻辑分区，如果损坏，数据不能恢复。</p>
+</li>
+</ul>
+<h4 id="LVM结构"><a href="#LVM结构" class="headerlink" title="LVM结构"></a>LVM结构</h4><p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706150308353.png" alt="image-20220706150308353"></p>
+<p><img src="C:\Users\lizhi\AppData\Roaming\Typora\typora-user-images\image-20220706150218413.png" alt="image-20220706150218413"></p>
+<h4 id="创建、查看LVM卷组"><a href="#创建、查看LVM卷组" class="headerlink" title="创建、查看LVM卷组"></a>创建、查看LVM卷组</h4><ul>
+<li><p><code>vgcreate 卷组名称 设备</code></p>
+<p>eg. <code>vgcreate mydisk /dev/sdb</code></p>
+</li>
+<li><p><code>vgdisplay</code>  显示系统所有的LVM卷组</p>
+</li>
+</ul>
+<h4 id="创建、查看逻辑卷"><a href="#创建、查看逻辑卷" class="headerlink" title="创建、查看逻辑卷"></a>创建、查看逻辑卷</h4><ul>
+<li><p><code>lvcreate 卷组名 -L 大小</code></p>
+<p>eg. <code>lvcreate mydisk -L 2G</code></p>
+<p>逻辑卷总大小不能超过卷组大小</p>
+</li>
+<li><p><code>lvdisplay</code></p>
+</li>
+</ul>
+<h4 id="格式化LVM卷组逻辑卷"><a href="#格式化LVM卷组逻辑卷" class="headerlink" title="格式化LVM卷组逻辑卷"></a>格式化LVM卷组逻辑卷</h4><ul>
+<li><p><code>mkfs –t 文件系统 /dev/mapper/vg_卷组名-lvol序号</code></p>
+<p>eg. <code>mkfs –t ext3 /dev/mapper/vg_mydisk-lvol0</code></p>
+</li>
+</ul>
+<h4 id="调整LVM分区大小"><a href="#调整LVM分区大小" class="headerlink" title="调整LVM分区大小"></a>调整LVM分区大小</h4><ol>
+<li><p>增大：</p>
+<p>先扩大逻辑卷大小，再扩大分区文件系统大小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lvextend /dev/mapper/vg_mydisk-lvol0 –L +3G（增量）</span><br><span class="line"></span><br><span class="line">lvextend /dev/mapper/vg_mydisk-lvol0 –L 5G (总大小)</span><br><span class="line"></span><br><span class="line">resize2fs /dev/mapper/vg_mydisk-lvol0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>减小</p>
+<p>先减小分区文件系统大小，再减小逻辑卷大小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Resize2fs /dev/mapper/vg_mydisk-lvpl0 新大小</span><br><span class="line"></span><br><span class="line">Lvreduce /dev/mapper/vg_mydisk-lvol0 –L 总大小或增量大小</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/13/Day%203/" data-id="cl96mekff00008cv2g1hr9055" data-title="linux" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/10/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/13/Day%203/">linux</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
