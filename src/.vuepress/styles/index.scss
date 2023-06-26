@@ -1,0 +1,16 @@
+// place your custom styles here
+footer {
+    display: flex;;
+    flex-direction: column;
+    .icpcode {
+        color: var(--dark-grey);
+        margin-bottom: 8px;
+    }
+    .my-footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .vp-copyright {
+        margin-top: 0;
+    }
+}
