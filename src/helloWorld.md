@@ -4,9 +4,8 @@ category:
  - 笔记
 tag:
  - 介绍
+title: Hello World
 ---
-
-# Hello World
 
 此博客用来记录学习的笔记和~~快乐的~~debug过程
 
