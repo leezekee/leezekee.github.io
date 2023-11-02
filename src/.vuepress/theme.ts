@@ -27,6 +27,7 @@ export default hopeTheme({
   // repo: "vuepress-theme-hope/vuepress-theme-hope",
 
   displayFooter: true,
+  contributors: false,
 
   blog: {
 
