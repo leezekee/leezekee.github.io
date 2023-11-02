@@ -6,7 +6,7 @@ title: 博客主页
 # heroImage: /logo.svg
 heroText: leezekee的博客
 heroFullScreen: true
-bgImage: /assets/images/bg.jpg
+bgImage: https://image.zekee.top/blog/bg.jpg
 # tagline: 
 # projects:
 #   - icon: project

@@ -33,7 +33,7 @@ export default hopeTheme({
 
     description: "一个在读的大烂王",
     roundAvatar: true,
-    avatar: "/assets/images/avatar.jpg",
+    avatar: "https://image.zekee.top/blog/avatar.jpg",
     // intro: "/intro.html",
     medias: {
       Gitee: "https://gitee.com/leezekee",
