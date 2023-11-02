@@ -29,7 +29,15 @@ export default defineUserConfig({
       ],
     }),
   ],
-  
+  head: [
+    ['script',
+      {
+        src: 'https://umami.zekee.top/script.js',
+        "data-website-id": '7fd44cad-d2c3-4a17-a899-9b1c71c3cd8a'
+      }
+    ]
+  ]
+
 
   // Enable it with pwa
   // shouldPrefetch: false,
