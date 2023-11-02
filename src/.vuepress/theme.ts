@@ -12,11 +12,11 @@ export default hopeTheme({
 
   footer: '<div class="my-footer"><a href="https://beian.miit.gov.cn/" class="icpcode">豫ICP备2022018624号-2</a><span>Powered By <a href="https://v2.vuepress.vuejs.org/zh/">VuePress</a>. Themed By <a href="https://theme-hope.vuejs.press/zh/">vuepress-theme-hope</a></span></div>',
   iconAssets: "fontawesome-with-brands",
-
+  copyright: 'CC-BY-SA LICENSED | Copyright © 2023 leezekee',
   // logo: "/logo.svg",
 
   docsDir: "src",
-  
+
   // navbar
   navbar,
 
@@ -39,7 +39,7 @@ export default hopeTheme({
       Gitee: "https://gitee.com/leezekee",
       GitHub: "https://github.com/leezekee",
       Steam: "https://steamcommunity.com/profiles/76561199074208998/",
-      
+      Gmail: "mailto:leezekee111156@gmail.com"
     },
   },
 
@@ -58,10 +58,11 @@ export default hopeTheme({
     blog: true,
     photoSwipe: true,
     copyright: {
-      hostname: "https://zekee.top",
-      license: 'CC',
+      license: 'CC-BY-SA 4.0',
       author: 'leezekee',
-      triggerWords: 50,
+      triggerWords: 20,
+      global: true,
+      disableCopy: false
     },
     comment: {
       // You should generate and use your own comment service
@@ -74,6 +75,7 @@ export default hopeTheme({
       strict: false,
       lazyLoading: false
     },
+    seo: true,
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
