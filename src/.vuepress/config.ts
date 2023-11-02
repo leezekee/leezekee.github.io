@@ -1,7 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
-import { commentPlugin } from "vuepress-plugin-comment2";
 
 export default defineUserConfig({
   base: "/",
@@ -29,15 +28,6 @@ export default defineUserConfig({
         },
       ],
     }),
-    commentPlugin({
-      provider: "Giscus",
-      repo: 'leezekee/blog-comment',
-      repoId: 'R_kgDOKoOSxw',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDOKoOSx84CaoBQ',
-      mapping: 'pathname',
-      strict: false,
-    })
   ],
   head: [
     ['script',

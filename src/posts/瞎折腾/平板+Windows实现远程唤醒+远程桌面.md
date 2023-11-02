@@ -16,13 +16,13 @@ title: 平板+Windows实现远程唤醒+远程桌面
 
 这个还是比较好实现的，用微软官方的Remote Desktop（在app store中貌似叫Remote Desktop Client）即可，直接去play商店下载就可以了，或者手机或者平板自带的应用商店也可以（一般都有，不排除二般情况，应用商店没且play商店访问不了可以试一试图中在“在更多设备安装”按钮下的的其他商店里找一找）
 
-![](./img/remoteDesktopPlay.jpg)
+![](https://image.zekee.top/blog/remoteDesktopPlay.jpg)
 
 与此同时我们先进行Windows的设置，进入设置->系统->远程桌面，将远程桌面打开即可
 
 Remote Desktop下载好以后打开，点击新建
 
-![](./img/add.jpg)
+![](https://image.zekee.top/blog/add.jpg)
 
 然后输入的电脑的ip即可，如果不清楚，可以打开cmd（Win+R），输入`ipconfig`，找到你上网使用的网卡，IPv4地址即为电脑内网ip，保存即可
 
@@ -30,11 +30,11 @@ Remote Desktop下载好以后打开，点击新建
 
 以水星路由器为例，使用ip或者melogin.cn进入后台管理，进入高级设置->网络参数->IP与Mac绑定，找到你电脑的ip点击绑定即可
 
-![](./img/ipandmac.jpg)
+![](https://image.zekee.top/blog/ipandmac.jpg)
 
 点击高级设置->高级用户->虚拟服务器->添加，内部端口为3389，ip地址为电脑ip，外部端口随意，找一个自己好记的就行
 
-![](./img/xunifuwuqi.jpg)
+![](https://image.zekee.top/blog/xunifuwuqi.jpg)
 
 再回到网络设置->WAN口参数->基本设置中的IP地址即为学校内网IP，也可以在学校认证界面查看，这个IP地址可能会变化，不过周期很长
 
@@ -67,11 +67,11 @@ WAKE UP BY PCI-E
 
 找到你的有线网卡，双击打开属性（或者右键，点击属性），点击上方的高级，将`关机 网络唤醒`和`魔术封包唤醒`的值都设置为开启
 
-![](./img/advanced.jpg)
+![](https://image.zekee.top/blog/advanced.jpg)
 
 然后点击，电源管理，把三个全勾上（没有电源管理怎么办，别急，在下边的[踩坑点](https://zekee.top/posts/remote/remoteSet.html#踩过的坑)中有解决办法）
 
-![](./img/batterySetting.jpg)
+![](https://image.zekee.top/blog/batterySetting.jpg)
 
 至此为止，你理论上就可以进行远程开机了
 
@@ -83,23 +83,23 @@ WAKE UP BY PCI-E
 
 安装WakeOnLan，完成后打开，点击封包监控诊断工具
 
-![](./img/wol.jpg)
+![](https://image.zekee.top/blog/wol.jpg)
 
 在此界面即可
 
-![](./img/wolwatch.jpg)
+![](https://image.zekee.top/blog/wolwatch.jpg)
 
 接下来去移动设备上安装一个远程唤醒软件，这里我用的是[WolOn - Wake on LAN Widgets](https://play.google.com/store/apps/details?id=com.bitklog.wolon&hl=zh-cn)
 
-![](./img/wolon.jpg)
+![](https://image.zekee.top/blog/wolon.jpg)
 
 打开之后点击右下的加号，从上往下第一个为从局域网外唤醒，第二个为从局域网内唤醒
 
-![](./img/wolstart.jpg)
+![](https://image.zekee.top/blog/wolstart.jpg)
 
 我们先从局域网内看起
 
-![](./img/wolonlanconfig.jpg)
+![](https://image.zekee.top/blog/wolonlanconfig.jpg)
 
 有了之前配置远程桌面的经验，这些东西不难拿到，这个网关地址不确定的话就在填写完IP地址后点击网关输入框右边的一个不知道是什么的小图标，他就会帮你填上，完成后点击save即可，剩下的都不要配置
 
@@ -111,11 +111,11 @@ WAKE UP BY PCI-E
 
 之后我们就可以进行局域网外的配置了，同样的，先进入路由器管理界面，进入高级设置->高级用户->虚拟服务器->添加，内部端口为9，IP地址为你电脑地址，外部端口随意
 
-![](./img/wolrouterconfig.jpg)
+![](https://image.zekee.top/blog/wolrouterconfig.jpg)
 
 然后就可以去平板上添加配置了，这次添加的是局域网外的配置，要选择最上边的选项
 
-![](./img/wolwanconfig.jpg)
+![](https://image.zekee.top/blog/wolwanconfig.jpg)
 
 这次的区别就是，IP地址这一栏填的是你在网络设置->WAN口参数->基本设置中的IP地址，端口为你设置的外部端口，完成后再用刚才的方法进行测试即可
 
@@ -133,7 +133,7 @@ WAKE UP BY PCI-E
 
 我就去Realtek官网看了一下，发现官网给出的居然有两个版本，一个是不带电源管理的，这问题的根本原因找到了
 
-![](./img/realtek.png)
+![](https://image.zekee.top/blog/realtek.png)
 
 下载图中第二个驱动后问题解决！
 
@@ -147,4 +147,4 @@ WAKE UP BY PCI-E
 
 当然，我再翻攻略的时候也说了要把电源选项中的用于快速启动给关闭，如果你不能正常启动，也可以看看这一项是否关闭
 
-![](./img/controlsettings.jpg)
+![](https://image.zekee.top/blog/controlsettings.jpg)

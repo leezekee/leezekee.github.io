@@ -57,12 +57,23 @@ export default hopeTheme({
   plugins: {
     blog: true,
     photoSwipe: true,
-
-    // comment: {
-    //   // You should generate and use your own comment service
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
+    copyright: {
+      hostname: "https://zekee.top",
+      license: 'CC',
+      author: 'leezekee',
+      triggerWords: 50,
+    },
+    comment: {
+      // You should generate and use your own comment service
+      provider: "Giscus",
+      repo: 'leezekee/blog-comment',
+      repoId: 'R_kgDOKoOSxw',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOKoOSx84CaoBQ',
+      mapping: 'pathname',
+      strict: false,
+      lazyLoading: false
+    },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
