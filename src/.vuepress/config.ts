@@ -1,4 +1,4 @@
-import { defineUserConfig } from "vuepress";
+import { defineUserConfig } from '@vuepress/cli';
 import theme from "./theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
@@ -8,7 +8,6 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "leezekee's Blog",
   description: "leezekee's Blog",
-
   theme,
   plugins: [
     searchProPlugin({
@@ -37,8 +36,6 @@ export default defineUserConfig({
       }
     ]
   ]
-
-
   // Enable it with pwa
   // shouldPrefetch: false,
 });
