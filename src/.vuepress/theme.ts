@@ -69,7 +69,7 @@ export default hopeTheme({
     copyright: {
       license: 'CC-BY-SA 4.0',
       author: 'leezekee',
-      triggerWords: 20,
+      triggerWords: 100,
       global: true,
       disableCopy: false
     },
@@ -92,6 +92,7 @@ export default hopeTheme({
       attrs: true,
       chart: true,
       codetabs: true,
+      component: true,
       demo: true,
       echarts: true,
       figure: true,
