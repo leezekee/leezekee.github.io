@@ -10,7 +10,16 @@ export default hopeTheme({
     url: "https://github.com/leezekee",
   },
 
-  footer: '<div class="my-footer"><a href="https://beian.miit.gov.cn/" class="icpcode">豫ICP备2022018624号-2</a><span>Powered By <a href="https://v2.vuepress.vuejs.org/zh/">VuePress</a>. Themed By <a href="https://theme-hope.vuejs.press/zh/">vuepress-theme-hope</a></span></div>',
+  footer: `<div class="my-footer">
+    <a href="https://beian.miit.gov.cn/" class= "icpcode" > 豫ICP备2022018624号 - 2 </a>
+    <span class="beian">
+      <img src="https://image.zekee.top/blog/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" class="logo">
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41030402000184" rel="noreferrer">豫公网安备41030402000184</a>
+    </span>
+    <span>
+      Powered By <a href="https://v2.vuepress.vuejs.org/zh/">VuePress</a>. Themed By <a href="https://theme-hope.vuejs.press/zh/">vuepress-theme-hope</a>
+    </span>
+  </div>`,
   iconAssets: "fontawesome-with-brands",
   copyright: 'CC-BY-SA LICENSED | Copyright © 2023 leezekee',
   // logo: "/logo.svg",
