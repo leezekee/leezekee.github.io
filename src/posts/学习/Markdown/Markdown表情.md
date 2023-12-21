@@ -8,11 +8,14 @@ tag:
  - Markdown
  - CheatSheet
 title: Markdown表情
+description: 收集一些Markdown表情，使用时方便查询
 ---
 
 <TableClick2Copy />
 
-收集一些Markdown表情，使用时方便查询，点击即可复制
+收集一些Markdown表情，使用时方便查询，点击即可复制使用
+
+<!-- more -->
 
 - [人物](#人物)
 - [自然](#自然)

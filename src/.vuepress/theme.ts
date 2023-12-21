@@ -9,7 +9,6 @@ export default hopeTheme({
     name: "leezekee",
     url: "https://github.com/leezekee",
   },
-
   footer: `<div class="my-footer">
     <a href="https://beian.miit.gov.cn/" class= "icpcode" > 豫ICP备2022018624号 - 2 </a>
     <span class="beian">
@@ -92,7 +91,6 @@ export default hopeTheme({
       attrs: true,
       chart: true,
       codetabs: true,
-      component: true,
       demo: true,
       echarts: true,
       figure: true,

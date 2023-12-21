@@ -6,6 +6,14 @@ export default defineUserConfig({
   base: "/",
 
   lang: "zh-CN",
+  // locales: {
+  //   "/": {
+  //     lang: "zh-CN",
+  //   },
+  //   "/en/": {
+  //     lang: "en-US",
+  //   },
+  // },
   title: "leezekee's Blog",
   description: "leezekee's Blog",
   theme,
