@@ -22,6 +22,9 @@ export default sidebar({
             {
               text: '使用256G洋垃圾打造3合1移动硬盘',
               link: '使用256G洋垃圾打造3合1移动硬盘',
+            }, {
+              text: 'Windows无线网络突然消失',
+              link: 'Windows无线网络突然消失'
             }
           ],
         },
@@ -41,6 +44,20 @@ export default sidebar({
                 }
               ],
             },
+            {
+              text: '运维',
+              prefix: "运维/",
+              collapsible: true,
+              children: [
+                {
+                  text: 'Git部署私服',
+                  link: 'Git部署私服',
+                }, {
+                  text: '利用Git Hooks自动打包部署',
+                  link: '利用Git Hooks自动打包部署'
+                }
+              ],
+            }
             // {
             //   text: '后端',
             //   prefix: "后端开发/",
