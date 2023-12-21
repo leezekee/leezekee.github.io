@@ -12,7 +12,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run docs:build && git add src/.vuepress/dist -f"
+      "pre-commit": "echo \"[Husky] project building\" && npm run docs:build && git add src/.vuepress/dist -f"
     }
   },
   "devDependencies": {
