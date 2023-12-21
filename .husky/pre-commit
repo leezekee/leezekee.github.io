@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo \"[Husky] project building\" && npm run docs:build && git add src/.vuepress/dist -f
+echo [Husky] project building && npm run docs:build && git add src/.vuepress/dist -f
