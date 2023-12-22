@@ -14,27 +14,30 @@ const visible = ref(false);
 const content = ref('');
 
 onMounted(() => {
-    const table = document.querySelector('table');
-    if (!table) return;
-    table.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (target.nodeName === 'TD' || target.nodeName === 'CODE') {
-            const text = target.innerText;
-            navigator.clipboard.writeText(text);
-            content.value = text;
-            if (visible.value) return;
-            visible.value = true;
-            setTimeout(() => {
-                visible.value = false;
-            }, 1000);
-        }
-    });
-    table.addEventListener('mouseover', (e) => {
-        const target = e.target as HTMLElement;
-        if (target.nodeName === 'TD' || target.nodeName === 'CODE') {
-            target.style.cursor = 'pointer';
-        }
-    });
+    const tables = document.querySelectorAll('table');
+    if (!tables) return;
+    tables.forEach((table) => {
+        table.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            if (target.nodeName === 'TD' || target.nodeName === 'CODE') {
+                const text = target.innerText;
+                navigator.clipboard.writeText(text);
+                content.value = text;
+                if (visible.value) return;
+                visible.value = true;
+                setTimeout(() => {
+                    content.value = '';
+                    visible.value = false;
+                }, 1000);
+            }
+        });
+        table.addEventListener('mouseover', (e) => {
+            const target = e.target as HTMLElement;
+            if (target.nodeName === 'TD' || target.nodeName === 'CODE') {
+                target.style.cursor = 'pointer';
+            }
+        });
+    })
 })
 </script>
 
