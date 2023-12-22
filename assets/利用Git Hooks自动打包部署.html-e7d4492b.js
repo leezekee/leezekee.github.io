@@ -1,1 +1,0 @@
-import{_ as e,o as _,c as o,d as t,a as c}from"./app-2ad4f9b0.js";const s={},a=c("p",null,"什么？2050年了你还在手动上传服务器然后手动打包部署？",-1);function n(r,l){return _(),o("div",null,[a,t(" more ")])}const d=e(s,[["render",n],["__file","利用Git Hooks自动打包部署.html.vue"]]);export{d as default};
