@@ -1,5 +1,5 @@
 // place your custom styles here
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zhi+Mang+Xing&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zhi+Mang+Xing&display=swap");
 
 footer {
     display: flex;
@@ -32,13 +32,28 @@ footer {
 }
 
 .vp-blog-hero-title {
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Permanent Marker", cursive;
     font-size: 72px;
 }
 
 .vp-blog-hero-description {
-    font-family: 'Zhi Mang Xing', cursive;
+    font-family: "Zhi Mang Xing", cursive;
     font-size: 20px;
+}
+
+@media (max-width: 719px) {
+    .vp-blog-hero-image {
+        margin: 1.5rem 4% !important;
+        width: fit-content;
+    }
+    .vp-blog-hero-title {
+        margin: 0 4% !important;
+    }
+    .vp-blog-hero-description {
+        font-family: "Zhi Mang Xing", cursive;
+        font-size: 20px;
+        margin-left: 4%;
+    }
 }
 
 .vp-nav-logo {
