@@ -31,7 +31,6 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-
   // repo: "vuepress-theme-hope/vuepress-theme-hope",
 
   displayFooter: true,
@@ -74,14 +73,18 @@ export default hopeTheme({
     },
     comment: {
       // You should generate and use your own comment service
-      provider: "Giscus",
-      repo: 'leezekee/blog-comment',
-      repoId: 'R_kgDOKoOSxw',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDOKoOSx84CaoBQ',
-      mapping: 'pathname',
-      strict: false,
-      lazyLoading: false
+      // provider: "Giscus",
+      // repo: 'leezekee/blog-comment',
+      // repoId: 'R_kgDOKoOSxw',
+      // category: 'Announcements',
+      // categoryId: 'DIC_kwDOKoOSx84CaoBQ',
+      // mapping: 'pathname',
+      // strict: false,
+      // lazyLoading: false
+      provider: "Waline",
+      serverURL: "https://waline.zekee.top",
+      meta: ["nick", "mail"],
+      requiredMeta: ["nick", "mail"],
     },
     seo: true,
 
