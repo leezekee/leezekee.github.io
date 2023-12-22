@@ -59,9 +59,9 @@ export default hopeTheme({
     },
   },
 
-  pageInfo: [
-    "Author", "Date", "Word", "ReadingTime", "Original", "Category", "Tag"
-  ],
+  // pageInfo: [
+  //   "Author", "Date", "Word", "ReadingTime", "Original", "Category", "Tag"
+  // ],
 
   // encrypt: {
   //   config: {
