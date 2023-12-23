@@ -342,7 +342,7 @@
     }; return Factory;
   });
 
-(() => {
+window.onload = function(){
   let interval = setInterval(() => {
     if (jQuery != undefined) { 
       clearInterval(interval);
@@ -354,7 +354,7 @@
       })
     }
   });
-})()
+}
 
 
 
