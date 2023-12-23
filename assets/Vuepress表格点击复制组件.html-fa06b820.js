@@ -1,0 +1,1 @@
+import{_ as e,o as _,c as s,e as o,b as r}from"./app-7f2c6edd.js";const t={},c=r("p",null,"在收集Markdown表情时突发奇想想搞个点击复制的组件，刚好可以用来熟悉vuepress",-1);function n(a,l){return _(),s("div",null,[c,o(" more ")])}const u=e(t,[["render",n],["__file","Vuepress表格点击复制组件.html.vue"]]);export{u as default};
