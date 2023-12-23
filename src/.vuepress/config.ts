@@ -1,6 +1,7 @@
 import { defineUserConfig } from '@vuepress/cli';
 import theme from "./theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
+import { viteBundler } from 'vuepress';
 
 export default defineUserConfig({
   base: "/",
@@ -70,4 +71,11 @@ export default defineUserConfig({
   ],
   // Enable it with pwa
   // shouldPrefetch: false,
+  bundler: viteBundler({
+    viteOptions: {
+      build: {
+        sourcemap: false
+      }
+    }
+  })
 });

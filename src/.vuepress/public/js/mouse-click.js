@@ -35,23 +35,12 @@ function clickHandler(e) {
         });
 }
 
-function debounce(fn, wait = 100) {
-    let timer = null;
-    return function (...args) {
-        const context = this;
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(() => {
-            fn.apply(context, args);
-        }, wait);
-    }
-}
-
 (() => { 
     let interval = setInterval(() => {
         if (jQuery != undefined) {
             clearInterval(interval);
             jQuery(document).ready(function ($) {
-                $("body").click(debounce(clickHandler));
+                $("body").click(clickHandler);
             });
         }
     }, 300);
