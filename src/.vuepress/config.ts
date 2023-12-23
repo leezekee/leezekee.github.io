@@ -37,32 +37,6 @@ export default defineUserConfig({
     }),
   ],
   head: [
-    ['link',
-      {
-        "rel": "prefetch",
-        "href": '/js/ribbon.js',
-        "as": "script"
-      }
-    ],
-    ['link',
-      {
-        "rel": "prefetch",
-        "src": '/js/canvas-nest.js',
-        "as": "script"
-      }
-    ],
-    ["link", {
-      "rel": "preload",
-      "src": "/js/jquery-3.7.1.min.js",
-      "as": "script",
-    }],
-    ['link',
-      {
-        "rel": "prefetch",
-        "src": '/js/mouse-click.js',
-        "as": "script",
-      }
-    ],
     ['script',
       {
         src: 'https://umami.zekee.top/script.js',
