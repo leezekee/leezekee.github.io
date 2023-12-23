@@ -1,1 +1,0 @@
-import{_ as o,r as n,o as t,c,a as r}from"./app-4544ce82.js";const _={};function s(a,l){const e=n("MoileHomeHideLogo");return t(),c("div",null,[r(e)])}const m=o(_,[["render",s],["__file","index.html.vue"]]);export{m as default};
