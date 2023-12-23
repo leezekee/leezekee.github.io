@@ -37,13 +37,63 @@ export default defineUserConfig({
     }),
   ],
   head: [
+    ['link',
+      {
+        "rel": "prefetch",
+        "href": '/js/ribbon.js',
+        "as": "script"
+      }
+    ],
+    ['link',
+      {
+        "rel": "prefetch",
+        "src": '/js/canvas-nest.js',
+        "as": "script"
+      }
+    ],
+    ["link", {
+      "rel": "preload",
+      "src": "/js/jquery-3.7.1.min.js",
+      "as": "script",
+    }],
+    ['link',
+      {
+        "rel": "prefetch",
+        "src": '/js/mouse-click.js',
+        "as": "script",
+      }
+    ],
     ['script',
       {
         src: 'https://umami.zekee.top/script.js',
         "data-website-id": '7fd44cad-d2c3-4a17-a899-9b1c71c3cd8a'
       }
-    ]
-  ]
+    ],
+    ['script',
+      {
+        "type": "text/javascript",
+        "src": '/js/canvas-nest.js',
+      }
+    ],
+    ["script", {
+      "language": "javascript",
+      "type": "text/javascript",
+      "src": "/js/jquery-3.7.1.min.js"
+    }],
+    ['script',
+      {
+        "type": "text/javascript",
+        "src": '/js/mouse-click.js',
+      }
+    ],
+    ['script',
+      {
+        "type": "text/javascript",
+        "src": '/js/ribbon.js',
+        "defer": true
+      }
+    ],
+  ],
   // Enable it with pwa
   // shouldPrefetch: false,
 });

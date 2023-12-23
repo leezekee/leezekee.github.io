@@ -1,5 +1,6 @@
 ---
 cover: https://image.zekee.top/blog/cover3.jpg
+icon: circle-info
 ---
 
 # 个人介绍

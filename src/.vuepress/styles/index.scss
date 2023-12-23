@@ -59,3 +59,42 @@ footer {
 .vp-nav-logo {
     border-radius: 50%;
 }
+
+#main-content,
+.vp-blog-info-wrapper,
+.vp-blog-hero {
+    z-index: 3;
+}
+
+#sidebar {
+    z-index: 4;
+    background: none;
+    backdrop-filter: none;
+}
+
+.vp-sidebar-links {
+    // background-color: var(--bg-color);   
+    height: calc(100% - var(--navbar-height));
+    backdrop-filter: saturate(150%) blur(12px);
+}
+
+.vp-breadcrumb,
+.vp-page-title,
+.theme-hope-content,
+.page-meta,
+.vp-page-nav,
+#comment {
+    // background-color: var(--bg-color);
+    backdrop-filter: saturate(150%) blur(12px);
+}
+.vp-page-title hr {
+    margin: 0;
+}
+
+#main-content .theme-hope-content {
+    padding-top: 8.5px !important;
+}
+
+#main-content .vp-page-title .page-info {
+    padding-bottom: 8.5px !important;
+}

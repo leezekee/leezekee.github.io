@@ -11,4 +11,4 @@ heroImageStyle: "border-radius: 50%;"
 bgImage: https://image.zekee.top/blog/bg.jpg
 ---
 
-<MoileHomeHideLogo />
+<MobileHomeHideLogo />
