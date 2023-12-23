@@ -35,7 +35,7 @@ function clickHandler(e) {
         });
 }
 
-(() => { 
+window.onload = function() {
     let interval = setInterval(() => {
         if (jQuery != undefined) {
             clearInterval(interval);
@@ -44,5 +44,5 @@ function clickHandler(e) {
             });
         }
     }, 300);
-})()
+}
 
