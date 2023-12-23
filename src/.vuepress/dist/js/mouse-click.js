@@ -17,7 +17,7 @@ function getRandom(max, min) {
                     var x = e.pageX,
                         y = e.pageY;
                     $i.css({
-                        "z-index": 999999999999999999999999999999999,
+                        "z-index": 99999999999999,
                         "top": y - 20,
                         "left": x,
                         "position": "absolute",
