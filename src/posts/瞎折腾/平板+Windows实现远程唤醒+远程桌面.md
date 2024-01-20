@@ -6,7 +6,7 @@ tag:
  - 远程开发
  - 平板玩法
 title: 平板+Windows实现远程唤醒+远程桌面
-description: 平板都买了，是时候该给电脑包收起来了☺️
+description: 平板+Windows实现远程唤醒+远程桌面
 ---
 
 心心念念的平板终于到手了，是时候该给电脑包收起来了:smile:

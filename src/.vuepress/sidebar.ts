@@ -1,5 +1,5 @@
 import { sidebar } from "vuepress-theme-hope";
-import fileTree from "./utils/auto-sidebar";
+import getSideBar from "./utils/auto-sidebar";
 
 export default sidebar({
   "/": [
@@ -94,6 +94,6 @@ export default sidebar({
     //     }
     //   ]
     // },
-    fileTree
+    getSideBar()
   ],
 });

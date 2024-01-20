@@ -6,7 +6,9 @@ tag:
  - Windows
  - 网卡
 title: Windows无线网络突然消失
-description: 记录一次离谱的Windows无线网络突然消失事件，死去的软件也能跑来背刺？
+description: 
+ - 记录一次离谱的Windows无线网络突然消失事件
+ - windows仍在设置此设备的类配置（代码：56）
 ---
 
 这是一次离谱的Windows无线网络突然消失事件的记录，死去的软件也能跑来背刺？

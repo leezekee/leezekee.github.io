@@ -9,7 +9,7 @@ tag:
  - Javascript
  - Axios
 title: Axios封装与API的统一管理
-description: 在写了一些屎山之后发现统一的api管理真的很重要
+description: Axios封装与API的统一管理
 ---
 
 在写了一些屎山之后发现统一的api管理真的很重要
