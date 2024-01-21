@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as _,e as o,b as c}from"./app-7f2c6edd.js";const n={},r=c("p",null,"部署git私服纯属是属觉得好玩又能配合自动打包部署，一举两得，何乐不为",-1);function s(a,l){return t(),_("div",null,[r,o(" more ")])}const m=e(n,[["render",s],["__file","Git部署私服.html.vue"]]);export{m as default};
