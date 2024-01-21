@@ -50,17 +50,17 @@ export default defineUserConfig({
         "src": '/js/canvas-nest.js',
       }
     ],
-    ["script", {
-      "language": "javascript",
-      "type": "text/javascript",
-      "src": "/js/jquery-3.7.1.min.js"
-    }],
-    ['script',
-      {
-        "type": "text/javascript",
-        "src": '/js/mouse-click.js',
-      }
-    ],
+    // ["script", {
+    //   "language": "javascript",
+    //   "type": "text/javascript",
+    //   "src": "/js/jquery-3.7.1.min.js"
+    // }],
+    // ['script',
+    //   {
+    //     "type": "text/javascript",
+    //     "src": '/js/mouse-click.js',
+    //   }
+    // ],
     ['script',
       {
         "type": "text/javascript",
