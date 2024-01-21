@@ -1,1 +1,0 @@
-import{_ as o,r as n,o as t,c,d as r}from"./app-c6ad665c.js";const _={};function s(l,a){const e=n("MobileHomeHideLogo");return t(),c("div",null,[r(e)])}const d=o(_,[["render",s],["__file","index.html.vue"]]);export{d as default};
