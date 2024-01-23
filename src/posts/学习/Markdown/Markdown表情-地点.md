@@ -17,8 +17,6 @@ description: 收集一些Markdown表情，使用时方便查询
 
 <!-- more -->
 
-## 地点 ##
-
 | 表情 | 代码 | 
 | :- | :- |
 | :house: | `:house:` |
